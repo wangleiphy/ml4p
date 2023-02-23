@@ -5,7 +5,7 @@
 
 
 
-1. **Overview**
+1. **[Overview](materials/1_overview)**
    - Scientific machine learning with and without data
 2. **Machine learning practices**
    - Supervised learning: Hand-written digits recognition 

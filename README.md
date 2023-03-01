@@ -7,9 +7,8 @@
 
 1. **[Overview](materials/1_overview)**
    - Scientific machine learning with and without data
-2. **Machine learning practices**
-   - Supervised learning: Hand-written digits recognition 
-   - Unsupervised learning: Principal component analysis
+2. **[Machine learning practices](materials/2_handson)**
+   - Hello world example: Hand-written digits recognition 
    - Programming frameworks, hardware, and workflow
 3. **A hitchhiker’s guide to deep learning**
    - The four pillars: data, model, loss function, and optimization

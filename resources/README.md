@@ -6,7 +6,7 @@
 
 [Machine Learning for Ab-initio Electronic Structure Tutorial](https://github.com/CompPhysVienna/MLSummerSchoolVienna2022/blob/main/Day04_July14/ML_for_Materials_Hard_and_Soft_ML_for_Ab_initio_Electronic_Structure_Tutorial_(Solution).ipynb)
 
-[JAX for scientific computing](resources/[MODE] JAX for scientific computing.pdf)
+[JAX for scientific computing](jax.pdf)
 
 [JAX: accelerated ML research via composable function transformations](https://youtu.be/mVf3HJ6gNDc)
 

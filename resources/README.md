@@ -42,6 +42,8 @@
 
 [Unige Deep Learning Course](https://fleuret.org/dlc/#lectures)
 
+[ULiège Deep Learning Course](https://github.com/glouppe/info8010-deep-learning)
+
 [Deep learning for molecules & materials](https://dmol.pub/)
 
 

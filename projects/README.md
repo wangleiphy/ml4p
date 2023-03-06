@@ -44,6 +44,17 @@ Play around with it. Explain how it works. Do you find it useful ?
 
 
 
+## 6. Molecular Property Prediction
+
+[Here](https://www.kaggle.com/competitions/champs-scalar-coupling/overview) is a competition on Kaggle. It's scientific ML with data: Use the data to develop an algorithm to predict the interaction between two atoms in a molecule. Background in DFT, MD would be helpful. 
+
+You can either
+
+- work on the competition and submit your results to the leaderboard.
+-or, explore your own idea building on the existing competition.
+
+
+
 ## Lastly, welcome to bring your own project...
 
 

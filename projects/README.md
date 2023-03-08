@@ -55,6 +55,16 @@ You can either
 
 
 
+## 7. Three-body problem
+
+[Here](https://github.com/zaman13/Three-Body-Problem-Gravitational-System/blob/master/Python%20notebook%20files/Earth_Jupiter_Sun_system.ipynb) is a solver of gravitational three-body system. Due to the system’s chaotic nature, this kind of iterative calculations always have unpredictable and potentially infinite computational cost.
+
+Try to design a neural network trained by the data generated from this traditional solver, and see if you can accelerate the calculation.
+
+You can either try other problem such as Quantum Many-Body Problem.
+
+
+
 ## Lastly, welcome to bring your own project...
 
 

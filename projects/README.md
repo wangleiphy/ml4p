@@ -61,8 +61,6 @@ You can either
 
 Try to design a neural network trained by the data generated from this traditional solver, and see if you can accelerate the calculation.
 
-You can either try other problem such as Quantum Many-Body Problem.
-
 
 
 ## Lastly, welcome to bring your own project...

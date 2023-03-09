@@ -46,12 +46,7 @@ Play around with it. Explain how it works. Do you find it useful ?
 
 ## 6. Molecular Property Prediction
 
-[Here](https://www.kaggle.com/competitions/champs-scalar-coupling/overview) is a competition on Kaggle. It's scientific ML with data: Use the data to develop an algorithm to predict the interaction between two atoms in a molecule. Background in DFT, MD would be helpful. 
-
-You can either
-
-- work on the competition and submit your results to the leaderboard.
--or, explore your own idea building on the existing competition.
+[Here](https://www.kaggle.com/competitions/champs-scalar-coupling/overview) is a competition on Kaggle. It's scientific ML with data: Use the data to develop an algorithm to predict the interaction between two atoms in a molecule. Background in DFT, MD would be helpful. Please work on the competition and submit your results to the leaderboard.
 
 
 
@@ -60,6 +55,19 @@ You can either
 [Here](https://github.com/zaman13/Three-Body-Problem-Gravitational-System/blob/master/Python%20notebook%20files/Earth_Jupiter_Sun_system.ipynb) is a solver of the gravitational three-body system. Due to the system’s chaotic nature, this kind of iterative calculation always has unpredictable and potentially infinite computational costs.
 
 Try to design a neural network trained by the data generated from this traditional solver, and see if you can accelerate the calculation.
+
+
+
+## 8. Superconductor discovery
+
+[This paper](https://arxiv.org/abs/2104.11150) contains some ideas of discoverying new superconducting coumpounds with higher Tc.  Try to setup such a system and make your own prediction! 
+
+
+
+## 9. Symbolic regression 
+
+[Symbolic Regression](https://github.com/MilesCranmer/PySR) is a method to let you fit data with mathmatical expressions. Play with this package and use it for a cool application. 
+
 
 
 

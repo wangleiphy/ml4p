@@ -34,7 +34,7 @@
 
 [Neural Net Training Dynamics](https://www.cs.toronto.edu/~rgrosse/courses/csc2541_2022/)
 
-
+[A Recipe for Training Neural Networks](http://karpathy.github.io/2019/04/25/recipe/)
 
 ## Courses
 
@@ -43,6 +43,8 @@
 [Unige Deep Learning Course](https://fleuret.org/dlc/#lectures)
 
 [ULiège Deep Learning Course](https://github.com/glouppe/info8010-deep-learning)
+
+[DeepMind x UCL Deep Learning Lecture Series](https://www.deepmind.com/learning-resources/deep-learning-lecture-series-2020)
 
 [Deep learning for molecules & materials](https://dmol.pub/)
 
@@ -58,5 +60,4 @@
 
 [Do we still need models or just more data and compute?](https://staff.fnwi.uva.nl/m.welling/wp-content/uploads/Model-versus-Data-AI-1.pdf)
 
-
-
+[A blog on overfitting](https://sohl-dickstein.github.io/2022/11/06/strong-Goodhart.html)

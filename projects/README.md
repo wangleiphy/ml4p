@@ -68,7 +68,9 @@ Try to design a neural network trained by the data generated from this tradition
 
 [Symbolic Regression](https://github.com/MilesCranmer/PySR) is a method to let you fit data with mathmatical expressions. Play with this package and use it for a cool application. 
 
+## 10. Rubik’s cube
 
+[Reinforcement Learning to solve Rubik’s cube (and other complex problems!)](https://medium.datadriveninvestor.com/reinforcement-learning-to-solve-rubiks-cube-and-other-complex-problems-106424cf26ff). Our class does not cover Reinforcement Learning. However, if you are interested in Rubik's cube and want to explore how Machine Learning can be applied to it without relying on complex group theory, you can see that article and [github code](https://github.com/Shmuma/rl/tree/master/articles/01_rubic).
 
 
 ## Lastly, welcome to bring your own project...

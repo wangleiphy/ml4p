@@ -10,7 +10,7 @@ Try to set up a machine-learning model to learn the energy and pressure of the s
 
 [Here](https://markovmodel.github.io/mdshare/ALA2/#alanine-dipeptide) you can find the trajectory file of the alanine dipeptide sample from molecular dynamics simulation. 
 
-Please write a generative model to generate more configurations of the same molecule.  
+Please write a generative model to generate more configurations of the same molecule. Think about it, how can this be useful ? 
 
 
 
@@ -27,7 +27,7 @@ You can either
 
 ## 4. Electrons in a quantum dot
 
-[Here](https://colab.research.google.com/drive/1yIlPo5CAjYrqWHeFEZrMlzWNCoNJ6_YP?usp=sharing) is an example code that carries variational free energy calculation for a few electrons in a quantum dot. 
+[Here](quantum_dot.ipynb) is an example code that carries variational free energy calculation for a few electrons in a quantum dot. 
 
 You can either 
 

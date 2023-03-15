@@ -10,7 +10,7 @@
 2. **[Machine learning practices](materials/2_handson)**
    - Hello world example: Hand-written digits recognition 
    - Programming frameworks, hardware, and workflow
-3. **A hitchhiker’s guide to deep learning**
+3. **[A hitchhiker’s guide to deep learning](materials/3_hitchhiker)**
    - The four pillars: data, model, loss function, and optimization
    - Deep learning primitives: CNN, GNN, and transformer
 4. **Symmetries in machine learning** 

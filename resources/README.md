@@ -18,6 +18,8 @@
 
 [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)
 
+[GPT in 60 Lines of NumPy](https://jaykmody.com/blog/gpt-from-scratch/)
+
 [Let's build GPT from scratch](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 
 
@@ -35,6 +37,14 @@
 [Neural Net Training Dynamics](https://www.cs.toronto.edu/~rgrosse/courses/csc2541_2022/)
 
 [A Recipe for Training Neural Networks](http://karpathy.github.io/2019/04/25/recipe/)
+
+
+
+## Differentiable programming
+
+[Deep implicit layers](http://implicit-layers-tutorial.org/)
+
+
 
 ## Courses
 

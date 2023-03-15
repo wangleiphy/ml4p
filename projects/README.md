@@ -1,3 +1,8 @@
+# **Please fill in [this form](https://docs.google.com/document/d/1wGvThrTNFXvXWczOvaEOyBbBf9Sdgj-lV_LYVM7T9po/edit?usp=sharing) to register by March 23rd, 2023.** 
+
+
+# Possible projects
+
 ## 1. Hydrogen in a box 
 
 [Here](https://code.itp.ac.cn/codes/hydrogen-data) you can find some pre-computed data for 64 hydrogen atoms in a box. There are six sets of data at different temperatures (T) and densities (rs). 
@@ -73,7 +78,7 @@ Try to design a neural network trained by the data generated from this tradition
 [Reinforcement Learning to solve Rubik’s cube (and other complex problems!)](https://medium.datadriveninvestor.com/reinforcement-learning-to-solve-rubiks-cube-and-other-complex-problems-106424cf26ff). Our class does not cover Reinforcement Learning. However, if you are interested in Rubik's cube and want to explore how Machine Learning can be applied to it without relying on complex group theory, you can see that article and [github code](https://github.com/Shmuma/rl/tree/master/articles/01_rubic).
 
 
-## Lastly, welcome to bring your own project...
+## 11. Otherwise, welcome to bring your own project! 
 
 
 

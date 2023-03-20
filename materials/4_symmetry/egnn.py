@@ -9,7 +9,16 @@ import haiku as hk
 from typing import Optional
 from functools import partial
 
-from utils import switch
+def switch(r, rc):
+    '''
+    Eq(9) of 1805.09003
+    #or smooth envelop following PhysRevE.74.066701 
+    ((rc -rij)/rc)**3 * jnp.heaviside(rc-r, 0.0) 
+    '''
+    rcs = 0.5*rc
+    _s = lambda r: (0.5*jnp.cos(np.pi*(r-rcs)/(rc-rcs))+0.5)
+    s = jnp.where(r<rc, jnp.where(r<rcs, 1.0, _s(r)), 0.0)
+    return s
 
 class EGNN(hk.Module):
 

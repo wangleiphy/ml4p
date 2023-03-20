@@ -3,3 +3,4 @@ jaxlib
 numpy
 pytest
 dm-haiku
+typing_extensions

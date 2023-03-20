@@ -1,2 +1,4 @@
 jax
+numpy
+pytest
 dm-haiku

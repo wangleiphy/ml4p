@@ -1,7 +1,12 @@
-from config import * 
+import jax
+import jax.numpy as jnp
+from jax.config import config   
+config.update("jax_enable_x64", True)
+from jax.flatten_util import ravel_pytree
+import numpy as np 
+import haiku as hk
 
 from egnn import EGNN
-from jax.flatten_util import ravel_pytree
 
 def test_egnn():
     depth = 4

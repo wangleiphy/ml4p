@@ -1,4 +1,5 @@
 jax
+jaxlib
 numpy
 pytest
 dm-haiku

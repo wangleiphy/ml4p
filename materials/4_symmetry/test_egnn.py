@@ -2,29 +2,12 @@ import jax
 import jax.numpy as jnp
 from jax.config import config   
 config.update("jax_enable_x64", True)
+from scipy.stats import ortho_group
 from jax.flatten_util import ravel_pytree
-from functools import partial
 import numpy as np 
 import haiku as hk
 
 from egnn import EGNN
-
-@partial(jax.vmap, in_axes=(0, None))
-def rotate(x, angle):
-    """
-        Euler rotation of x.
-        Input:
-            x.shape: (3,)
-            angle.shape: (3,)
-    """
-    # Create rotation matrices
-    Rx = jnp.array([[1, 0, 0], [0, jnp.cos(angle[0]), -jnp.sin(angle[0])], [0, jnp.sin(angle[0]), jnp.cos(angle[0])]])
-    Ry = jnp.array([[jnp.cos(angle[1]), 0, jnp.sin(angle[1])], [0, 1, 0], [-jnp.sin(angle[1]), 0, jnp.cos(angle[1])]])
-    Rz = jnp.array([[jnp.cos(angle[2]), -jnp.sin(angle[2]), 0], [jnp.sin(angle[2]), jnp.cos(angle[2]), 0], [0, 0, 1]])
-    
-    # Apply rotations z -> y -> x
-    R = jnp.dot(Rz, jnp.dot(Ry, Rx))
-    return jnp.dot(R, x)
 
 def test_egnn():
     depth = 4
@@ -61,10 +44,9 @@ def test_egnn():
    
     # Test the rotation equivariance
     print("---- Test rotation equivariance ----")
-    angle = jax.random.uniform(key, (dim,), minval=0, maxval=2*jnp.pi)
-    rotatex = rotate(x, angle)
-    rotatez = egnn.apply(params, rotatex)
-    assert jnp.allclose(rotatez, rotate(z, angle))
+    rotate = ortho_group.rvs(dim)
+    rotatez = egnn.apply(params, jnp.dot(x, rotate))
+    assert jnp.allclose(rotatez, jnp.dot(z, rotate))
 
     # Test of permutation equivariance.
     print("---- Test permutation equivariance ----")

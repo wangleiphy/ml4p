@@ -2,7 +2,6 @@ import jax
 import jax.numpy as jnp
 from jax.config import config   
 config.update("jax_enable_x64", True)
-from scipy.stats import ortho_group
 from jax.flatten_util import ravel_pytree
 import numpy as np 
 import haiku as hk
@@ -44,7 +43,7 @@ def test_egnn():
    
     # Test the rotation equivariance
     print("---- Test rotation equivariance ----")
-    rotate = ortho_group.rvs(dim)
+    rotate = jax.random.orthogonal(key, dim)
     rotatez = egnn.apply(params, jnp.dot(x, rotate))
     assert jnp.allclose(rotatez, jnp.dot(z, rotate))
 

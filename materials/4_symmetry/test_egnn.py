@@ -17,40 +17,45 @@ def test_egnn():
     
     @hk.without_apply_rng
     @hk.transform
-    def egnn(x):
+    def egnn(x, h):
         net = EGNN(depth, H)
-        return net(x)
+        return net(x, h)
     
 
     key = jax.random.PRNGKey(42)
     x = jax.random.uniform(key, (n, dim), minval=0, maxval=L)
-    print(hk.experimental.tabulate(egnn)(x))
+    h = jnp.ones((n, H))
+    print(hk.experimental.tabulate(egnn)(x, h))
 
-    params = egnn.init(key, x)
+    params = egnn.init(key, x, h)
 
     raveled_params, _ = ravel_pytree(params)
     print ('# of params', raveled_params.size)
 
     
-    z = egnn.apply(params, x)
+    z, hz = egnn.apply(params, x, h)
     
     # Test that flow results of two "equivalent"
     # Test the translation equivariance.
     print("---- Test translation equivariance ----")
     shift = jnp.array( np.random.randn(dim) )
-    shiftz = egnn.apply(params, x + shift)
+    shiftz, shifth = egnn.apply(params, x + shift, h)
     assert jnp.allclose(shiftz, z + shift)
+    assert jnp.allclose(shifth, hz)
    
     # Test the rotation equivariance
     print("---- Test rotation equivariance ----")
     rotate = jax.random.orthogonal(key, dim)
-    rotatez = egnn.apply(params, jnp.dot(x, rotate))
+    rotatez, rotateh = egnn.apply(params, jnp.dot(x, rotate), h)
     assert jnp.allclose(rotatez, jnp.dot(z, rotate))
+    assert jnp.allclose(rotateh, hz)
 
     # Test of permutation equivariance.
     print("---- Test permutation equivariance ----")
     P = np.random.permutation(n)
-    Pz = egnn.apply(params, x[P, :])
+    Pz, Ph = egnn.apply(params, x[P, :], h[P, :])
     assert jnp.allclose(Pz, z[P, :])
+    assert jnp.allclose(Ph, hz[P, :])
+
 
 test_egnn()

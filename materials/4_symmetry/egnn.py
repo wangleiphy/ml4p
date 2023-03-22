@@ -46,10 +46,9 @@ class EGNN(hk.Module):
         mlp = hk.nets.MLP([self.F, self.F], w_init=hk.initializers.TruncatedNormal(self.init_stddev), activation=jax.nn.silu, name=f"node_mlp_{d}")
         return mlp(hm) + h 
 
-    def __call__(self, x):
+    def __call__(self, x, h):
         assert x.ndim == 2
         n, dim = x.shape
-        h = jnp.ones((n, self.F))
 
         def block(x, h, d):
             mij = self.phie(x, h, d)
@@ -59,7 +58,6 @@ class EGNN(hk.Module):
             mask = ~np.eye(n, dtype=bool) # maskout diagonal
             mij = mij[mask].reshape(n, n-1, self.F)
             xij = xij[mask].reshape(n, n-1, dim)
-            rij = jnp.linalg.norm(xij, axis=-1)
 
             weight = self.phix(mij, d).reshape(n, n-1)/(n-1)
 
@@ -76,5 +74,4 @@ class EGNN(hk.Module):
         for d in range(self.depth):
             x, h = block(x, h, d)
        
-        final = hk.Linear(dim, w_init=hk.initializers.TruncatedNormal(self.init_stddev), with_bias=False)
-        return final(h) + x
+        return x, h

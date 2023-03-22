@@ -1,5 +1,4 @@
 '''
-EGNN adapted to periodic system
 https://arxiv.org/abs/2102.09844
 '''
 import jax
@@ -9,23 +8,11 @@ import haiku as hk
 from typing import Optional
 from functools import partial
 
-def switch(r, rc):
-    '''
-    Eq(9) of 1805.09003
-    #or smooth envelop following PhysRevE.74.066701 
-    ((rc -rij)/rc)**3 * jnp.heaviside(rc-r, 0.0) 
-    '''
-    rcs = 0.5*rc
-    _s = lambda r: (0.5*jnp.cos(np.pi*(r-rcs)/(rc-rcs))+0.5)
-    s = jnp.where(r<rc, jnp.where(r<rcs, 1.0, _s(r)), 0.0)
-    return s
-
 class EGNN(hk.Module):
 
     def __init__(self, 
                  depth :int,
                  F:int, 
-                 L:float,
                  remat: bool = False, 
                  init_stddev:float = 0.01,
                  name: Optional[str] = None
@@ -34,8 +21,6 @@ class EGNN(hk.Module):
         assert (depth >= 2)
         self.depth = depth
         self.F = F
-        self.L = L
-        self.rc = 0.5*L
         self.remat = remat
         self.init_stddev = init_stddev
   
@@ -70,7 +55,6 @@ class EGNN(hk.Module):
             mij = self.phie(x, h, d)
 
             xij = jnp.reshape(x, (n, 1, dim)) - jnp.reshape(x, (1, n, dim))
-            xij = xij - self.L*jnp.rint(xij/self.L)
 
             mask = ~np.eye(n, dtype=bool) # maskout diagonal
             mij = mij[mask].reshape(n, n-1, self.F)
@@ -78,7 +62,6 @@ class EGNN(hk.Module):
             rij = jnp.linalg.norm(xij, axis=-1)
 
             weight = self.phix(mij, d).reshape(n, n-1)/(n-1)
-            weight *= switch(rij, self.rc)
 
             x = x + jnp.einsum('ijd,ij->id', xij, weight)
 

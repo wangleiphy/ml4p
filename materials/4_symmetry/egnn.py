@@ -42,9 +42,7 @@ class EGNN(hk.Module):
     def phie(self, x, h, d):
         n, dim = x.shape 
         rij = (jnp.reshape(x, (n, 1, dim)) - jnp.reshape(x, (1, n, dim)))
-        #|r| calculated with periodic consideration
-        rij = jnp.linalg.norm(jnp.sin(np.pi*rij/self.L)+jnp.eye(n)[..., None], axis=-1)*(1.0-jnp.eye(n))
-        rij = rij.reshape(n, n, 1)
+        rij = jnp.sum(jnp.square(rij), axis=-1).reshape(n, n, 1)
 
         mlp = hk.nets.MLP([self.F, self.F], w_init=hk.initializers.TruncatedNormal(self.init_stddev), activation=jax.nn.silu, name=f"edge_mlp_{d}") 
         @partial(hk.vmap, in_axes=(0, None, 0), out_axes=0, split_rng=False)

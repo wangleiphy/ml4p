@@ -30,6 +30,8 @@
 
 [Geometric deep learning](https://geometricdeeplearning.com/)
 
+[Group Equivariant Deep Learning](https://uvagedl.github.io/)
+
 
 
 ## Optimization

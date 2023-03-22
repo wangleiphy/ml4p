@@ -13,15 +13,14 @@
 3. **[A hitchhiker’s guide to deep learning](materials/3_hitchhiker)**
    - The four pillars: data, model, loss function, and optimization
    - Deep learning primitives: CNN, GNN, and transformer
-4. **Symmetries in machine learning** 
-   - Invariant and equivariant models 
-   - The geometric deep learning program 
+4. **[Symmetries in machine learning](materials/4_symmetry)** 
+   - Invariant and equivariant neural networks 
+   - DeepMD, Euclidean equivariant GNN, Tensor field networks
+   - Permutation symmetry and quantum wavefunctions
 5. **Differentiable programming**
-
    - The engine of deep learning: automatic differentiation on computation graphs
    - Differentiable DFT/MD/Tensor networks/..., and why they are useful
 6. **Generative models-I** 
-
    - A dictionary of generative models and statistical physics
    - Boltzmann machines
    - Autoregressive models

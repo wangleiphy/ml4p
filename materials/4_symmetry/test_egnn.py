@@ -18,7 +18,7 @@ def test_egnn():
     @hk.without_apply_rng
     @hk.transform
     def egnn(x):
-        net = EGNN(depth, H, L)
+        net = EGNN(depth, H)
         return net(x)
     
 

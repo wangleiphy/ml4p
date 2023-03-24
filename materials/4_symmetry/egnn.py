@@ -18,7 +18,6 @@ class EGNN(hk.Module):
                  name: Optional[str] = None
                  ):
         super().__init__(name=name)
-        assert (depth >= 2)
         self.depth = depth
         self.F = F
         self.remat = remat

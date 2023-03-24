@@ -1,7 +1,6 @@
 import jax
 import jax.numpy as jnp
-from jax.config import config   
-config.update("jax_enable_x64", True)
+jax.config.update("jax_enable_x64", True)
 from jax.flatten_util import ravel_pytree
 import numpy as np 
 import haiku as hk
@@ -32,10 +31,8 @@ def test_egnn():
     raveled_params, _ = ravel_pytree(params)
     print ('# of params', raveled_params.size)
 
-    
     z, hz = egnn.apply(params, x, h)
     
-    # Test that flow results of two "equivalent"
     # Test the translation equivariance.
     print("---- Test translation equivariance ----")
     shift = jnp.array( np.random.randn(dim) )
@@ -57,5 +54,3 @@ def test_egnn():
     assert jnp.allclose(Pz, z[P, :])
     assert jnp.allclose(Ph, hz[P, :])
 
-
-test_egnn()

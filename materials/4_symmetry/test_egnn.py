@@ -9,7 +9,7 @@ from egnn import EGNN
 
 def test_egnn():
     depth = 4
-    H = 24
+    F = 24
     L = 1.234
 
     n, dim = 16, 3
@@ -17,13 +17,14 @@ def test_egnn():
     @hk.without_apply_rng
     @hk.transform
     def egnn(x, h):
-        net = EGNN(depth, H)
+        net = EGNN(depth, F)
         return net(x, h)
     
 
     key = jax.random.PRNGKey(42)
-    x = jax.random.uniform(key, (n, dim), minval=0, maxval=L)
-    h = jnp.ones((n, H))
+    key, subkey1, subkey2 = jax.random.split(key, 3)
+    x = jax.random.normal(subkey1, (n, dim)) # position
+    h = jax.random.normal(subkey2, (n, F))   # scalar feature 
     print(hk.experimental.tabulate(egnn)(x, h))
 
     params = egnn.init(key, x, h)

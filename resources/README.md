@@ -44,7 +44,11 @@
 
 ## Differentiable programming
 
+[Automatic differentiation](http://videolectures.net/deeplearning2017_johnson_automatic_differentiation/)
+
 [Deep implicit layers](http://implicit-layers-tutorial.org/)
+
+[Jax autodiff cookbook](https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html)
 
 
 

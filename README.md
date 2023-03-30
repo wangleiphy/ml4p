@@ -17,7 +17,7 @@
    - Invariant and equivariant neural networks 
    - DeepMD, Euclidean equivariant GNN, Tensor field networks
    - Permutation symmetry and quantum wavefunctions
-5. **Differentiable programming**
+5. **[Differentiable programming](materials/5_diffprogram)**
    - The engine of deep learning: automatic differentiation on computation graphs
    - Differentiable DFT/MD/Tensor networks/..., and why they are useful
 6. **Generative models-I** 

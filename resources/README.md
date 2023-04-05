@@ -50,6 +50,8 @@
 
 [Jax autodiff cookbook](https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html)
 
+[Implement Your Own Automatic Differentiation with Julia in ONE day](https://blog.rogerluo.dev/2018/10/23/write-an-ad-in-one-day/)
+
 
 
 ## Courses
@@ -77,3 +79,5 @@
 [Do we still need models or just more data and compute?](https://staff.fnwi.uva.nl/m.welling/wp-content/uploads/Model-versus-Data-AI-1.pdf)
 
 [A blog on overfitting](https://sohl-dickstein.github.io/2022/11/06/strong-Goodhart.html)
+
+[Making Deep Learning Go Brrrr From First Principles](https://horace.io/brrr_intro.html)

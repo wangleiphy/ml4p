@@ -54,6 +54,12 @@
 
 
 
+## Generative models
+
+[流模型：计算物理视角](https://www.bilibili.com/video/BV1gp4y1t7ND/)
+
+
+
 ## Courses
 
 [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/)
